@@ -51,13 +51,13 @@ void main(void)
 	{
 	 __delay_cycles(1000);               // Wait for ADC Ref to settle
 	 ADC10CTL0 |= ENC + ADC10SC;         // Sampling and conversion start
-    ADC_value = ADC10MEM;// Assigns the value held in ADC10MEM to the integer called ADC_value
-    Temp=((ADC_value-673)*423)/1024; // convert value between 0 and 1024 to temperature in celcius
-    Temp=Temp-20; // make value more accurate depending on calibrated value
-    realnum[0]=num[Temp/10]; // get 1st temp value which is int and convert it to char
-    realnum[1]=num[Temp%10]; // get 2nd temp value which is int and convert it to char
-	UART_TX(realnum); // Transmit temperature values from the array realnum that stores them
-	UART_TX("\r\n");
+         ADC_value = ADC10MEM;// Assigns the value held in ADC10MEM to the integer called ADC_value
+         Temp=((ADC_value-673)*423)/1024; // convert value between 0 and 1024 to temperature in celcius
+         Temp=Temp-20; // make value more accurate depending on calibrated value
+         realnum[0]=num[Temp/10]; // get 1st temp value which is int and convert it to char
+         realnum[1]=num[Temp%10]; // get 2nd temp value which is int and convert it to char
+	 UART_TX(realnum); // Transmit temperature values from the array realnum that stores them
+	 UART_TX("\r\n");
 	_delay_cycles(1000000);
      }
 	}
