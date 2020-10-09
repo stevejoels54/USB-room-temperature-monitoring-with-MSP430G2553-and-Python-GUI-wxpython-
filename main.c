@@ -31,7 +31,7 @@ void main(void)
 	BCSCTL1 = CALBC1_1MHZ; // Set DCO
 	DCOCTL = CALDCO_1MHZ;
 
-    //P1DIR |= BIT0+BIT6;
+        //P1DIR |= BIT0+BIT6;
 	//P1OUT &=~BIT0+BIT6;
 	
 	P1SEL |= BIT1+BIT2; // UART rx and tx pins
